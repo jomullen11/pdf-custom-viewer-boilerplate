@@ -1,6 +1,21 @@
 // wherever the pdf is
-const url = "../docs/Backpacking_travel.pdf";
+// let url = "../docs/Backpacking_travel.pdf";
 // const url = '../docs/1565371561607-acrobat_8_help.pdf'
+let url = '../docs/new-doc.pdf'
+
+
+
+const pullDays = async () => {
+    await fetch(`http://localhost:3000/users/5d5317477aadca4eef7cff07`)
+    .then(res => res.json())
+    .then(data => data.map(element => console.log(element.data)))
+
+    .catch(err => console.log(err))
+}
+
+
+
+pullDays()
 
 let pdfDoc = null,
   pageNum = 1,
